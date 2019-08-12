@@ -1,14 +1,14 @@
-# React Starter
+# chatty-chat
 
-> This repo contains boilerplate code to aid in the creation of a new React app with Redux. Follow the below setup instructions to get started.
+> this is an app built using react, redux, and a firebase backend.
 
 ### Setup Instructions
 
 > 1. Fork this repo
 > 1. Clone your forked copy of this repo
->    - `git clone https://github.com/[Your Username]/react_starter.git`
+>    - `git clone https://github.com/nebevets/chatty-chat.git`
 > 1. Change directory into the newly cloned repo
->    - `cd react_starter`
+>    - `cd chatty-chat`
 > 1. Install dependencies 
 >    - `npm install`
 > 1. Start dev server
