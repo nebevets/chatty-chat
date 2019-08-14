@@ -1,0 +1,9 @@
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  padding: 0;
+}
+.nav li {
+  padding: 0 0.5em;
+}

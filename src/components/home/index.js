@@ -1,11 +1,8 @@
 import React from 'react';
 
-const Home = (props) => {
-  return(
-    <h1>chat home</h1>
-  );
-}
+const Home = () => 
+  <div className="home">
+    <h1>Home</h1>
+  </div>
 
 export default Home;
-
-// video stopped at 25.15
