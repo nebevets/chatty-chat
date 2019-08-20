@@ -13,3 +13,18 @@ export const getMessages = () => dispatch => {
     });
   return dbRef;
 }
+
+export const createChatRoom = roomDetails => async dispatch => {
+  const botMessage = {
+    message: `welcome to ${roomDetails.title}`,
+    name: 'chat-bot'
+  }
+  const logKey = await db.ref('/chat-logs').push().key;
+
+  roomDetails.chatId = logKey;
+
+  const roomRef = await db.ref('/chat-rooms').push(roomDetails);
+
+  console.log('room ref', roomRef.key);
+  console.log('log key', logKey);
+}
