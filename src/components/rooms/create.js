@@ -6,8 +6,9 @@ import Input from '../forms/input';
 
 
 class CreateRoom extends Component{
-  handleCreateRoom = formValues => {
-    this.props.createChatRoom(formValues);
+  handleCreateRoom = async formValues => {
+    const chatRoomId = await this.props.createChatRoom(formValues);
+    this.props.history.push(`/rooms/${chatRoomId}`);
   }
   render(){
     const {handleSubmit} = this.props;
