@@ -1,19 +1,16 @@
 import React from 'react';
-import {Route} from 'react-router-dom';
-import Home from './home';
-import Chat from './chat';
 import Nav from './nav';
+import AppRoutes from './app-routes';
 
 const App = () => (
-    <div>
+    <main>
         <header>
             <Nav/>
         </header>
-        <div className="container">
-            <Route exact path="/" component={Home} />
-            <Route path="/chat" component={Chat} />
-        </div>
-    </div>
+        <section className="container">
+            <AppRoutes/>
+        </section>
+    </main>
 );
 
 export default App;
