@@ -23,14 +23,25 @@ export const getChatRoomInfo = chatRoomId => dispatch => {
   return dbRef;
 }
 
+export const getChatRoomList = () => dispatch => {
+  const dbRef = db.ref('/chat-rooms');
+  dbRef.on('value', snapshot => {
+    dispatch({
+      type: types.GET_CHAT_ROOM_LIST,
+      roomList: snapshot.val()
+    });
+  });
+  return dbRef;
+}
+
 export const createChatRoom = chatRoomDetails => dispatch => {
   const chatBotMessage = {
     message: `welcome to ${chatRoomDetails.title}`,
     name: 'chat-bot'
   }
-  const chatLogKey = db.ref('/chat-logs').push().key;
-  chatRoomDetails.chatId = chatLogKey;
+  const chatLogsKey = db.ref('/chat-logs').push().key;
+  chatRoomDetails.chatLogsId = chatLogsKey;
   const chatRoomsRef = db.ref('/chat-rooms').push(chatRoomDetails);
-  db.ref(`/chat-logs/${chatLogKey}`).push(chatBotMessage);
+  db.ref(`/chat-logs/${chatLogsKey}`).push(chatBotMessage);
   return chatRoomsRef.key;
 }

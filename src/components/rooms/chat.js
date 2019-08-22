@@ -13,9 +13,9 @@ class Chat extends Component{
     this.chatRoomRef = getChatRoomInfo(params.id);
   }
   componentDidUpdate(prevProps){
-    const {chatId, getChatLog} = this.props;
-    if(chatId && prevProps.chatId !== chatId){
-      this.chatLogRef = getChatLog(chatId);
+    const {chatLogsId, getChatLog} = this.props;
+    if(chatLogsId && prevProps.chatLogsId !== chatLogsId){
+      this.chatLogRef = getChatLog(chatLogsId);
     }
   }
   componentWillUnmount(){
@@ -27,7 +27,6 @@ class Chat extends Component{
     }
   }
   render(){
-    console.log('chat props', this.props);
     const { description, messages, title, topic } = this.props;
     const messageElements = Object
       .keys(messages)
