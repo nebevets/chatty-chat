@@ -45,3 +45,11 @@ export const createChatRoom = chatRoomDetails => dispatch => {
   db.ref(`/chat-logs/${chatLogsKey}`).push(chatBotMessage);
   return chatRoomsRef.key;
 }
+
+export const sendChatMessage = (chatLogsId, message) => dispatch => {
+  const newMessage = {
+    message,
+    name: 'steve'
+  }
+  db.ref(`/chat-logs/${chatLogsId}`).push(newMessage);
+}
