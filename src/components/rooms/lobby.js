@@ -24,8 +24,12 @@ class Lobby extends Component{
       .map( room => {
         return(
           <li key={room}>
-            <span>{roomList[room].title}</span>
-            <span>{roomList[room].topic}</span>
+            <div>
+              <Link to={`/rooms/${room}`}>
+                <span>{roomList[room].title}</span>
+                <span>{roomList[room].topic}</span>
+              </Link>
+            </div>
             <div>{roomList[room].description}</div>
           </li>
         )
