@@ -1,3 +1,4 @@
+import './lobby.scss';
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
@@ -23,7 +24,7 @@ class Lobby extends Component{
       .keys(roomList)
       .map( room => {
         return(
-          <li key={room}>
+          <li key={room} className="room">
             <div>
               <Link to={`/rooms/${room}`}>
                 <span>{roomList[room].title}</span>
@@ -39,7 +40,7 @@ class Lobby extends Component{
         <h1>chat lobby</h1>
         {
           roomElements.length 
-          ? <ul>{roomElements}</ul>
+          ? <ul className="chatRooms">{roomElements}</ul>
           : null
         }
         <Link to="/rooms/create">create room</Link>
